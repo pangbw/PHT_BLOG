@@ -94,8 +94,8 @@ create table t_friend_link
 
 /*插入网站信息数据*/
 INSERT INTO blog.t_website_info (value_name, value) VALUES ('aboutMeContent', 'about me something ');
-INSERT INTO blog.t_website_info (value_name, value) VALUES ('aboutMeImageUrl', 'https://gitee.com/ShaoxiongDu/imageBed/raw/master/logo.jpg');
-INSERT INTO blog.t_website_info (value_name, value) VALUES ('topTitle', '<i class="icon paper plane outline"></i>DSX_BLOG');
+INSERT INTO blog.t_website_info (value_name, value) VALUES ('aboutMeImageUrl', '');
+INSERT INTO blog.t_website_info (value_name, value) VALUES ('topTitle', '<i class="icon paper plane outline"></i>PHT_BLOG');
 INSERT INTO blog.t_website_info (value_name, value) VALUES ('views', '14013');
 
 /**

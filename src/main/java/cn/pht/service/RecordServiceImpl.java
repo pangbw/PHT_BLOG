@@ -79,7 +79,6 @@ public class RecordServiceImpl implements RecordService {
 
             @Override
             public int compare(Record r1, Record r2) {
-                // TODO Auto-generated method stub
                 return r2.getTotalNumberOfVisits().intValue() - r1.getTotalNumberOfVisits().intValue();
             }
         });
