@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head  th:replace="_fragments :: head(~{::title})">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+  <link rel="stylesheet" href="../static/css/me.css">
+</head>
+
+<!--随机古诗词-->
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<body>
+
+  <!--导航-->
+  <nav th:replace="_fragments :: menu(4)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small " >
+
+  </nav>
+
+  <!--中间内容-->
+  <div  class="m-container m-padded-tb-big animated fadeIn">
+
+    <!--适配移动端-->
+    <div class="ui container">
+
+      <div class="ui stackable grid">
+
+        <!--左侧-->
+        <div class="five wide column">
+          <div class="ui segment">
+              <img th:src="${session.aboutMeImageUrl}" class="ui medium circular image" align="center" >
+          </div>
+
+          <!--联系-->
+          <div class="ui attached bottom segment center aligned">
+            <a target="_blank" title="Github" href="https://github.com/pangbw" class="ui icon circular button">
+              <i class="github icon"></i>
+            </a>
+
+            <a target="_blank" title="BiliBili主页"  href="https://space.bilibili.com/" class="ui icon circular button">
+              <i class="bitcoin icon"></i>
+            </a>
+
+            <a target="_blank" title="微博主页" href="https://weibo.com/" class="ui icon circular button">
+              <i class="weibo icon"></i>
+            </a>
+
+            <a target="_blank" title="steam主页"  href="https://steamcommunity.com/" class="ui icon circular button">
+              <i class="steam icon"></i>
+            </a>
+
+            <a target="_blank" title="给我发送邮件" href="mailto:pangbowenmail@qq.com" class="ui icon circular button">
+              <i class="mail icon"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+        <!--右侧-->
+        <div class="eleven wide column">
+          <!--顶部-->
+          <div class="ui top attached segment">
+            <div class="center aligned ui header" th:utext="${session.aboutMeContent}"></div>
+
+            <div class="attached segment ui aligned">
+
+              <h3 align="center"><span id="jinrishici-sentence">正在加载今日诗词...</span></h3>
+
+             <!--个人标签-->
+              <div class="attached segment ui aligned" >
+
+                  <!--<ul>
+
+
+                  &lt;!&ndash;循环取出技能清单&ndash;&gt;
+                  <li th:each="skill:${session.skillList}" >
+                      &lt;!&ndash;<p  th:text="${skill.getSkillName()}"></p>&ndash;&gt;
+                    <div class="middle aligned content" th:text="${skill.getSkillName()}"></div>
+                  </li>
+                  </ul>-->
+                <div class="ui middle aligned animated horizontal list" th:each="skill:${session.skillList}">
+                  <div class="item">
+                      <button class="ui teal basic button" th:text="${skill.getSkillName()}"></button>
+                  </div>
+                </div>
+
+              </div>
+
+          </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!--适配移动端-->
+    </div>
+
+    <!--中间内容-->
+  </div>
+
+  <br>
+  <!--底部footer-->
+  <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+
+  </footer>
+  <!--/*/<th:block th:replace="_fragments :: script">/*/-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+  <!--/*/</th:block>/*/-->
+
+  <script>
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+  </script>
+
+</body>
+</html>

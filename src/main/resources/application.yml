@@ -1,0 +1,22 @@
+server:
+  port: 80
+
+spring:
+
+  thymeleaf:
+    mode: HTML
+
+  datasource:
+    url: jdbc:mysql:///blog?useUnicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 用于通过IP查找地址的百度API
+baiduApi:
+  accessKey: 044a118d70b348aaaa51db55538e12d5
+  secretKey: 180c22ac8229449f82d0664974f2f1ee
+
+# 用于微信推送消息
+pushMessage:
+  token:
